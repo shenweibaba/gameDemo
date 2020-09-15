@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css?s=2">
+    <title>Title</title>
+
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
+    <script src="js/bootstrap.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>play baseketball</h2>
+                <p>come on! Let's play</p>
+                <hr>
+                <center>
+                    <p>
+                        <div class="input-group">
+                            <span class="input-group-addon">difficulty</span>
+                            <select class="form-control">
+                                <option>Easy</option>
+                                <option>normal</option>
+                                <option>hard</option>
+                            </select>
+
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-danger" onclick="">start</button>
+                                <button type="button" class="btn btn-warning" onclick="">pause</button>
+                                <button type="button" class="btn btn-success" onclick="">next</button>
+                            </div>
+                        </div>
+                    </p>
+                </center>
+                <center id="cdiv" style="width: 100%">
+                    <p>
+                        <canvas id="canvas"  style="width: 100%;height: 563px;">
+                        </canvas>
+                    </p>
+                </center>
+                <hr>
+            </div>
+        </div>
+    </div>
+</body>
+
+    <!-- 图片预缓存 -->
+    <img src="images/ball.png" style="width: 0px;height: 0px;" />
+    <img src="images/ballshadow.png" style="width: 0px;height: 0px;" />
+    <img src="images/paddle_1.png" style="width: 0px;height: 0px;" />
+    <img src="images/paddle_2.png" style="width: 0px;height: 0px;" />
+    <img src="images/paddle2_1.png" style="width: 0px;height: 0px;" />
+    <img src="images/paddle2_2.png" style="width: 0px;height: 0px;" />
+    <img src="images/paddle3_1.png" style="width: 0px;height: 0px;" />
+    <img src="images/paddle3_2.png" style="width: 0px;height: 0px;" />
+    <img src="images/paddle4_1.png" style="width: 0px;height: 0px;" />
+    <img src="images/paddle4_2.png" style="width: 0px;height: 0px;" />
+
+    <script src="js/common.js"></script>
+    <script src="js/game.js"></script>
+    <script>
+        var clientWidth = document.body.clientWidth;
+        var cxk_body = 1;
+        var move_way = 1;
+        canvas.width = canvas.clientWidth;
+        canvas.style.width = canvas.clientWidth + "px";
+        cdiv.style.width = cdiv.clientWidth + "px";
+        canvas.height = canvas.clientWidth / 1000 * 563;
+        canvas.style.height = canvas.clientWidth / 1000 * 563 + "px";
+        if (canvas.width < 936) {
+            canvas.width = 936;
+            canvas.height = 936 / 1000 * 563;
+            canvas.setAttribute("style", "");
+            canvas.style.zoom = (cdiv.clientWidth / 936);
+        }else {
+
+        }
+
+    </script>
+</html>
